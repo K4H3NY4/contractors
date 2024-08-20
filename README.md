@@ -9,50 +9,53 @@
 #### Endpoints
 
 ##### List Projects
-Endpoint: /api/projects
-Method: GET
-Description: Retrieve a list of all projects belonging to the authenticated user.
-Headers:
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Response:
-Status Code: 200 OK
-Content: json
-
-[
-  {
-    "id": 1,
-    "user_id": 1,
-    "title": "Project Title",
-    "description": "Project description goes here.",
-    "status": "active",
-    "total_cost": 5000.00,
-    "created_at": "2024-08-01T00:00:00.000000Z",
-    "updated_at": "2024-08-01T00:00:00.000000Z"
-  },
-  ...
-]
+- **Endpoint**: `/api/projects`
+- **Method**: `GET`
+- **Description**: Retrieve a list of all projects belonging to the authenticated user.
+- **Headers**:
+  - `Authorization: Bearer YOUR_SANCTUM_TOKEN`
+- **Response**:
+  - **Status Code**: `200 OK`
+  - **Content**: `json`
+    ```json
+    [
+      {
+        "id": 1,
+        "user_id": 1,
+        "title": "Project Title",
+        "description": "Project description goes here.",
+        "status": "active",
+        "total_cost": 5000.00,
+        "created_at": "2024-08-01T00:00:00.000000Z",
+        "updated_at": "2024-08-01T00:00:00.000000Z"
+      },
+      ...
+    ]
+    ```
 
 ##### Get Specific Project
-Endpoint: /api/projects/{id}
-Method: GET
-Description: Retrieve details of a specific project by its ID.
-Headers:
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Parameters:
-id (path) - The ID of the project.
-Response: Status Code: 200 OK
-Content: json
-
-{
-  "id": 1,
-  "user_id": 1,
-  "title": "Project Title",
-  "description": "Project description goes here.",
-  "status": "active",
-  "total_cost": 5000.00,
-  "created_at": "2024-08-01T00:00:00.000000Z",
-  "updated_at": "2024-08-01T00:00:00.000000Z"
-}
+- **Endpoint**: `/api/projects/{id}`
+- **Method**: `GET`
+- **Description**: Retrieve details of a specific project by its ID.
+- **Headers**:
+  - `Authorization: Bearer YOUR_SANCTUM_TOKEN`
+- **Parameters**:
+  - `id` (path) - The ID of the project.
+- **Response**:
+  - **Status Code**: `200 OK`
+  - **Content**: `json`
+    ```json
+    {
+      "id": 1,
+      "user_id": 1,
+      "title": "Project Title",
+      "description": "Project description goes here.",
+      "status": "active",
+      "total_cost": 5000.00,
+      "created_at": "2024-08-01T00:00:00.000000Z",
+      "updated_at": "2024-08-01T00:00:00.000000Z"
+    }
+    ```
 
 ##### Create Project
 Endpoint: /api/projects
