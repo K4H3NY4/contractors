@@ -76,7 +76,7 @@
 - **Response**:
   - **Status Code**: `201 Created`
   - **Content**:`json`
- ```json 
+    ```json 
         {
         "id": 1,
         "user_id": 1,
@@ -90,15 +90,12 @@
     ```
 
 ##### Update Project
-Endpoint: /api/projects/{id}
-Method: PUT
-Description: Update the details of a specific project.
-Headers:
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Parameters:
-id (path) - The ID of the project to be updated.
-Request Body: json
+ - **Endpoint**: `/api/projects/{id}`
+ - **Method**: `PUT`
+ - **Description**:`Update the details of a specific project.`
+ - **Headers**:`Authorization: Bearer YOUR_SANCTUM_TOKEN`
+ - **Content-Type**: `application/json`
+ - **Request Body**: `json`
     ```json 
         {
         "title": "Updated Project Title",
@@ -107,10 +104,10 @@ Request Body: json
         "total_cost": 3500.00
         }
     ```
-Response:
-Status Code: 200 OK
-Content: json
-        ```json 
+ - **Response**:
+ - **Status Code**: `200 OK`
+ - **Content**: `json`
+    ```json 
         {
         "id": 1,
         "user_id": 1,
@@ -121,7 +118,7 @@ Content: json
         "created_at": "2024-08-01T00:00:00.000000Z",
         "updated_at": "2024-08-02T00:00:00.000000Z"
         }
-        ```
+    ```
 ##### Delete Project
 Endpoint: /api/projects/{id}
 Method: DELETE
