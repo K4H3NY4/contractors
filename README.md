@@ -66,12 +66,12 @@
 - **Content-Type**: `application/json`
 - **Request Body**:`json`
   ```json
-{
-  "title": "New Project Title",
-  "description": "Detailed description of the new project.",
-  "status": "active",
-  "total_cost": 3000.00
-}
+    {
+        "title": "New Project Title",
+        "description": "Detailed description of the new project.",
+        "status": "active",
+        "total_cost": 3000.00
+    }
 ```
 Response:
 Status Code: 201 Created
