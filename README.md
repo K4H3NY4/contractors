@@ -72,21 +72,22 @@
         "status": "active",
         "total_cost": 3000.00
     }
-```
-Response:
-Status Code: 201 Created
-Content:json
-
-{
-  "id": 1,
-  "user_id": 1,
-  "title": "New Project Title",
-  "description": "Detailed description of the new project.",
-  "status": "active",
-  "total_cost": 3000.00,
-  "created_at": "2024-08-01T00:00:00.000000Z",
-  "updated_at": "2024-08-01T00:00:00.000000Z"
-}
+    ```
+- **Response**:
+  - **Status Code**: `201 Created`
+  - **Content**:`json`
+ ```json 
+        {
+        "id": 1,
+        "user_id": 1,
+        "title": "New Project Title",
+        "description": "Detailed description of the new project.",
+        "status": "active",
+        "total_cost": 3000.00,
+        "created_at": "2024-08-01T00:00:00.000000Z",
+        "updated_at": "2024-08-01T00:00:00.000000Z"
+        }
+    ```
 
 ##### Update Project
 Endpoint: /api/projects/{id}
@@ -98,29 +99,29 @@ Content-Type: application/json
 Parameters:
 id (path) - The ID of the project to be updated.
 Request Body: json
-
-{
-  "title": "Updated Project Title",
-  "description": "Updated description of the project.",
-  "status": "completed",
-  "total_cost": 3500.00
-}
-
+    ```json 
+        {
+        "title": "Updated Project Title",
+        "description": "Updated description of the project.",
+        "status": "completed",
+        "total_cost": 3500.00
+        }
+    ```
 Response:
 Status Code: 200 OK
 Content: json
-
-{
-  "id": 1,
-  "user_id": 1,
-  "title": "Updated Project Title",
-  "description": "Updated description of the project.",
-  "status": "completed",
-  "total_cost": 3500.00,
-  "created_at": "2024-08-01T00:00:00.000000Z",
-  "updated_at": "2024-08-02T00:00:00.000000Z"
-}
-
+        ```json 
+        {
+        "id": 1,
+        "user_id": 1,
+        "title": "Updated Project Title",
+        "description": "Updated description of the project.",
+        "status": "completed",
+        "total_cost": 3500.00,
+        "created_at": "2024-08-01T00:00:00.000000Z",
+        "updated_at": "2024-08-02T00:00:00.000000Z"
+        }
+        ```
 ##### Delete Project
 Endpoint: /api/projects/{id}
 Method: DELETE
