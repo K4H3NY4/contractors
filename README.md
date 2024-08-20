@@ -58,21 +58,21 @@
     ```
 
 ##### Create Project
-Endpoint: /api/projects
-Method: POST
-Description: Create a new project record.
-Headers:
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Request Body:json
-
+- **Endpoint**: `/api/projects`
+- **Method**: `POST`
+- **Description**: Create a new project record.
+- **Headers**:
+- **Authorization**: `Bearer YOUR_SANCTUM_TOKEN`
+- **Content-Type**: `application/json`
+- **Request Body**:`json`
+  ```json
 {
   "title": "New Project Title",
   "description": "Detailed description of the new project.",
   "status": "active",
   "total_cost": 3000.00
 }
-
+```
 Response:
 Status Code: 201 Created
 Content:json
