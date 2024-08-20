@@ -11,7 +11,7 @@
 ##### List Projects
 - **Endpoint**: `/api/projects`
 - **Method**: `GET`
-- **Description**: Retrieve a list of all projects belonging to the authenticated user.
+- **Description**: `Retrieve a list of all projects belonging to the authenticated user.`
 - **Headers**:
   - `Authorization: Bearer YOUR_SANCTUM_TOKEN`
 - **Response**:
@@ -36,11 +36,9 @@
 ##### Get Specific Project
 - **Endpoint**: `/api/projects/{id}`
 - **Method**: `GET`
-- **Description**: Retrieve details of a specific project by its ID.
-- **Headers**:
-  - `Authorization: Bearer YOUR_SANCTUM_TOKEN`
-- **Parameters**:
-  - `id` (path) - The ID of the project.
+- **Description**: `Retrieve details of a specific project by its ID.`
+- **Headers**:- `Authorization: Bearer YOUR_SANCTUM_TOKEN`
+
 - **Response**:
   - **Status Code**: `200 OK`
   - **Content**: `json`
@@ -60,7 +58,7 @@
 ##### Create Project
 - **Endpoint**: `/api/projects`
 - **Method**: `POST`
-- **Description**: Create a new project record.
+- **Description**: `Create a new project record.`
 - **Headers**:
 - **Authorization**: `Bearer YOUR_SANCTUM_TOKEN`
 - **Content-Type**: `application/json`
@@ -120,12 +118,9 @@
         }
     ```
 ##### Delete Project
-Endpoint: /api/projects/{id}
-Method: DELETE
-Description: Delete a specific project record.
-Headers:
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Parameters:
-id (path) - The ID of the project to be deleted.
-Response:
-Status Code: 204 No Content
+- **Endpoint**: `/api/projects/{id}`
+- **Method**: `DELETE`
+- **Description**: `Delete a specific project record.`
+- **Headers**: `Authorization: Bearer YOUR_SANCTUM_TOKEN`
+- **Response**:
+- **Status Code**: `204 No Content`
