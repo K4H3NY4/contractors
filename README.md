@@ -8,7 +8,7 @@
 ### Projects
 #### Endpoints
 
-##### List Projects
+#### List Projects
 - **Endpoint**: `/api/projects`
 - **Method**: `GET`
 - **Description**: `Retrieve a list of all projects belonging to the authenticated user.`
@@ -55,7 +55,7 @@
     }
     ```
 
-##### Create Project
+#### Create Project
 - **Endpoint**: `/api/projects`
 - **Method**: `POST`
 - **Description**: `Create a new project record.`
@@ -87,7 +87,7 @@
         }
     ```
 
-##### Update Project
+#### Update Project
  - **Endpoint**: `/api/projects/{id}`
  - **Method**: `PUT`
  - **Description**:`Update the details of a specific project.`
@@ -117,7 +117,7 @@
         "updated_at": "2024-08-02T00:00:00.000000Z"
         }
     ```
-##### Delete Project
+#### Delete Project
 - **Endpoint**: `/api/projects/{id}`
 - **Method**: `DELETE`
 - **Description**: `Delete a specific project record.`
