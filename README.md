@@ -85,3 +85,46 @@ Content:json
   "updated_at": "2024-08-01T00:00:00.000000Z"
 }
 
+##### Update Project
+Endpoint: /api/projects/{id}
+Method: PUT
+Description: Update the details of a specific project.
+Headers:
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Content-Type: application/json
+Parameters:
+id (path) - The ID of the project to be updated.
+Request Body: json
+
+{
+  "title": "Updated Project Title",
+  "description": "Updated description of the project.",
+  "status": "completed",
+  "total_cost": 3500.00
+}
+
+Response:
+Status Code: 200 OK
+Content: json
+
+{
+  "id": 1,
+  "user_id": 1,
+  "title": "Updated Project Title",
+  "description": "Updated description of the project.",
+  "status": "completed",
+  "total_cost": 3500.00,
+  "created_at": "2024-08-01T00:00:00.000000Z",
+  "updated_at": "2024-08-02T00:00:00.000000Z"
+}
+
+##### Delete Project
+Endpoint: /api/projects/{id}
+Method: DELETE
+Description: Delete a specific project record.
+Headers:
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Parameters:
+id (path) - The ID of the project to be deleted.
+Response:
+Status Code: 204 No Content
