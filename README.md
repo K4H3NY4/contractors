@@ -5,8 +5,7 @@
 ## Contractors Village
 
 
-### Projects
-#### Endpoints
+### Projects Endpoints
 
 #### List Projects
 - **Endpoint**: `/api/projects`
