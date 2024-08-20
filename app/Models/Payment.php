@@ -15,7 +15,6 @@ class Payment extends Model
         'status',
     ];
 
-    // Define the relationship with the Project model
     public function project()
     {
         return $this->belongsTo(Project::class);

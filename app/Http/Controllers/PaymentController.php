@@ -8,22 +8,22 @@ use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:sanctum')->only(['store', 'update', 'destroy']);
-    }
-
     public function index()
     {
-        $userProjects = Auth::user()->projects()->pluck('id');
-        return Payment::whereIn('project_id', $userProjects)->get();
+        $payments = Payment::whereHas('project', function($query) {
+            $query->where('user_id', Auth::id());
+        })->get();
+
+        return response()->json($payments);
     }
 
     public function show($id)
     {
-        $payment = Payment::findOrFail($id);
-        $this->authorize('view', $payment);
-        return $payment;
+        $payment = Payment::whereHas('project', function($query) {
+            $query->where('user_id', Auth::id());
+        })->findOrFail($id);
+
+        return response()->json($payment);
     }
 
     public function store(Request $request)
@@ -35,13 +35,15 @@ class PaymentController extends Controller
         ]);
 
         $payment = Payment::create($request->all());
+
         return response()->json($payment, 201);
     }
 
     public function update(Request $request, $id)
     {
-        $payment = Payment::findOrFail($id);
-        $this->authorize('update', $payment);
+        $payment = Payment::whereHas('project', function($query) {
+            $query->where('user_id', Auth::id());
+        })->findOrFail($id);
 
         $request->validate([
             'amount' => 'sometimes|required|numeric',
@@ -49,14 +51,18 @@ class PaymentController extends Controller
         ]);
 
         $payment->update($request->all());
-        return response()->json($payment, 200);
+
+        return response()->json($payment);
     }
 
     public function destroy($id)
     {
-        $payment = Payment::findOrFail($id);
-        $this->authorize('delete', $payment);
+        $payment = Payment::whereHas('project', function($query) {
+            $query->where('user_id', Auth::id());
+        })->findOrFail($id);
+
         $payment->delete();
+
         return response()->json(null, 204);
     }
 }
