@@ -13,8 +13,7 @@
 - **Description**: `Retrieve a list of all projects belonging to the authenticated user.`
 - **Headers**:
   - `Authorization: Bearer YOUR_SANCTUM_TOKEN`
-- **Response**:
-  - **Status Code**: `200 OK`
+- **Response**:`Status Code: 200 OK`
   - **Content**: `json`
     ```json
     [
@@ -121,5 +120,4 @@
 - **Method**: `DELETE`
 - **Description**: `Delete a specific project record.`
 - **Headers**: `Authorization: Bearer YOUR_SANCTUM_TOKEN`
-- **Response**:
-- **Status Code**: `204 No Content`
+- **Response**: `Status Code: 204 No Content`
