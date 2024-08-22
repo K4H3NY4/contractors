@@ -28,8 +28,22 @@ Route::apiResource('projects', ProjectController::class)->only(['index', 'show']
 
 //Payments
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('payments', PaymentController::class);
+    Route::get('/payments', [PaymentController::class, 'index']);
+    Route::get('/payments/{id}', [PaymentController::class, 'show']);
+    Route::post('/payments', [PaymentController::class, 'store']);
+    Route::put('/payments/{id}', [PaymentController::class, 'update']);
+    Route::delete('/payments/{id}', [PaymentController::class, 'destroy']);
 });
+
+
+//ProjectBids
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/projects/{projectId}/bids', [ProjectBidController::class, 'index']);
+    Route::post('/projects/{projectId}/bids', [ProjectBidController::class, 'store']);
+    Route::put('/bids/{id}', [ProjectBidController::class, 'update']);
+    Route::delete('/bids/{id}', [ProjectBidController::class, 'destroy']);
+});
+
 
 Route::get('/user', function (Request $request) {
     return $request->user();
