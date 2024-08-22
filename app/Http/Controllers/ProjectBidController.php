@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ProjectBid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class ProjectBidController extends Controller
 {
@@ -22,6 +23,10 @@ class ProjectBidController extends Controller
             'bid_amount' => 'required|numeric',
         ]);
 
+        // Ensure the project exists (optional)
+        // You might want to validate the project exists before allowing bids
+        // $project = Project::findOrFail($projectId);
+
         $bid = ProjectBid::create([
             'project_id' => $projectId,
             'user_id' => Auth::id(),
@@ -29,7 +34,7 @@ class ProjectBidController extends Controller
             'status' => 'pending',
         ]);
 
-        return response()->json($bid, 201);
+        return response()->json($bid, 201); // Return a 201 Created status
     }
 
     // Update an existing bid
@@ -41,7 +46,9 @@ class ProjectBidController extends Controller
         ]);
 
         $bid = ProjectBid::findOrFail($id);
-        $this->authorize('update', $bid); // Only allow the owner to update their bid
+
+        // Authorize the update operation
+        $this->authorize('update', $bid);
 
         $bid->update($request->only('bid_amount', 'status'));
 
@@ -52,10 +59,12 @@ class ProjectBidController extends Controller
     public function destroy($id)
     {
         $bid = ProjectBid::findOrFail($id);
-        $this->authorize('delete', $bid); // Only allow the owner to delete their bid
+
+        // Authorize the delete operation
+        $this->authorize('delete', $bid);
 
         $bid->delete();
 
-        return response()->json(null, 204);
+        return response()->json(null, 204); // Return a 204 No Content status
     }
 }
