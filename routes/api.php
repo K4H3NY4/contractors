@@ -6,6 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ContractorController;
+use App\Http\Controllers\ProjectBidController;
+
 
 Route::get('/', function () {
     return 'Welcome to my Laravel application!';
@@ -42,6 +45,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/projects/{projectId}/bids', [ProjectBidController::class, 'store']);
     Route::put('/bids/{id}', [ProjectBidController::class, 'update']);
     Route::delete('/bids/{id}', [ProjectBidController::class, 'destroy']);
+});
+
+
+//Contractors
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/contractors', [ContractorController::class, 'index']);
+    Route::get('/contractors/{id}', [ContractorController::class, 'show']);
+    Route::post('/contractors', [ContractorController::class, 'store']);
+    Route::put('/contractors/{id}', [ContractorController::class, 'update']);
+    Route::delete('/contractors/{id}', [ContractorController::class, 'destroy']);
 });
 
 
